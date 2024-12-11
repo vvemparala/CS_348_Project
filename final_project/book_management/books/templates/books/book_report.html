@@ -1,0 +1,19 @@
+<h1>Book Report</h1>
+<form method="get">
+    <label>Genre: <input type="text" name="genre" value="{{ genre }}"></label>
+    <label>Year Start: <input type="number" name="year_start" value="{{ year_start }}"></label>
+    <label>Year End: <input type="number" name="year_end" value="{{ year_end }}"></label>
+    <button type="submit">Filter</button>
+</form>
+
+<h2>Statistics</h2>
+<p>Total Books: {{ total_books }}</p>
+<p>Oldest Year: {{ oldest_year }}</p>
+<p>Newest Year: {{ newest_year }}</p>
+
+<h2>Books</h2>
+<ul>
+    {% for book in books %}
+        <li>{{ book.title }} - {{ book.genre }} ({{ book.year }})</li>
+    {% endfor %}
+</ul>
